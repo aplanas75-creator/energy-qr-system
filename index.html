@@ -1,25 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
   <title>Revisión factura luz</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: #ffffff;
+      color: #111;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #0B2D5C;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #22C55E;
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .trust {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .box {
+      background: #F3F4F6;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 25px;
+      font-size: 13px;
+      color: #333;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="box">
+<div class="container">
 
-  <h1>💡 ¿Estás pagando de más en tu luz?</h1>
+  <h1>💡 ¿Estás pagando de más en tu factura de luz?</h1>
 
-  <p>Te decimos gratis en 2 minutos si puedes ahorrar dinero.</p>
+  <p>Te decimos gratis en 2 minutos si puedes ahorrar dinero sin cambiar de compañía.</p>
 
-  <a id="wa" class="btn">📲 Enviar factura por WhatsApp</a>
+  <p class="highlight">⚠️ La mayoría de hogares paga más de lo necesario sin saberlo</p>
 
-  <small>🔒 Sin compromiso · ⚡ Respuesta rápida</small>
+  <a id="wa" class="btn">📲 Enviar mi factura por WhatsApp</a>
+
+  <div class="trust">
+    ✔ Revisión gratuita<br>
+    ✔ Sin cambiar de compañía<br>
+    ✔ Respuesta rápida<br>
+    ✔ Sin compromiso
+  </div>
+
+  <div class="box">
+    💰 Este servicio puede estar disponible gracias a comercios colaboradores de tu zona
+  </div>
 
 </div>
 
-<script src="app.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get("ref") || "directo";
+
+  const phone = "34TU_NUMERO"; // CAMBIA ESTO
+
+  const message = `Hola, quiero revisar mi factura de luz. Ref: ${ref}`;
+
+  document.getElementById("wa").href =
+    "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+</script>
 
 </body>
 </html>
