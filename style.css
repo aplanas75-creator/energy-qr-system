@@ -1,0 +1,23 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  padding: 40px;
+}
+
+h1 {
+  color: #0B2D5C;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 20px;
+  background: #22C55E;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
